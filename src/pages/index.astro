@@ -38,7 +38,7 @@ import Contact from '../components/Contact.astro'
 		/>
 
 		<!-- Servicios -->
-		<section class="services-container">
+		<section class="services-container hide">
 			<h1 class="services-title">
 				Nuestros Servicios
 			</h1>
@@ -80,7 +80,7 @@ import Contact from '../components/Contact.astro'
 		</section>
 
 		<!-- Eventos -->
-		<section class="events-container">
+		<section class="events-container hide">
 			<div class="title-events">
 				<h1>Eventos</h1>
 				<a href="">
@@ -129,6 +129,9 @@ import Contact from '../components/Contact.astro'
 		color: white;
 		font-size: 20px;
 		line-height: 1.6;
+	}
+	.hide {
+		display: none;
 	}
 	.services-title {
 		font-size: 4rem;
