@@ -1,0 +1,67 @@
+---
+interface Props {
+    image: string;
+    type: string;
+    category: string;
+    title: string;
+    href: string;
+    buttonText: string;
+}
+
+const { image, type, category, title, href, buttonText } = Astro.props;
+---
+
+<div class="event-card">
+    <div class="image">
+        <img src={image} alt="">
+        <span>{type}</span>
+    </div>
+    <div class="description">
+        <span>{category}</span>
+        <h2>{title}</h2>
+        <a href={href}>
+            {buttonText}
+            <img src="src/images/arrow-rightR.png" alt="">
+        </a>
+    </div>
+</div>
+
+<style>
+    .event-card {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 1rem;
+        max-width: 380px;
+    }
+    .image {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+    .image span {
+        position: absolute;
+        top: 12px;
+        left: 12px;
+        padding: 2px 8px;
+        background-color: #EEC432;
+        color: white;
+        border-radius: 4px;
+        font-size: 1rem;
+    }
+    h2 {
+        margin-top: 0;
+        font-size: 2rem;
+        font-weight: 800;
+    }
+    .description span {
+        font-size: 1.12rem;
+    }
+    a {
+        text-decoration: none;
+		color: #BF323A;
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+    }
+</style>

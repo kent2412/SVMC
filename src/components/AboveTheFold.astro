@@ -1,0 +1,83 @@
+---
+interface Props {
+	title: string;
+	description: string;
+    buttonText: string;
+	href: string;
+}
+
+const { title, description, buttonText, href } = Astro.props;
+---
+
+<header>
+    <div class="bg">
+        <div class="contentATF">
+            <img src="src/images/logo-white.png" class="logo" alt="">
+            <h1>{title}</h1>
+            <p>{description}</p>
+            <a href={href}>
+                {buttonText}
+                <img src="src/images/arrow-right.png" alt="">
+            </a>
+        </div>
+    </div>
+</header>
+
+<style>
+    .bg {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-image: url("../images/Group61.png");
+        background-size: cover;
+        background-position: center;
+        height: 80dvh;
+    }
+    .logo {
+        display: none;
+    }
+    .contentATF {
+        width: 100%;
+        max-width: 1366px;
+        padding: 2rem;
+    }
+    h1, p {
+        margin: 0;
+        margin-bottom: 2rem;
+        max-width: 760px;
+    }
+    h1 {
+        font-size: 4.5rem;
+        font-weight: 800;
+        line-height: 1.12;
+    }
+    p {
+        font-size: 1.2rem;
+    }
+    a {
+        background-color: #EEC432;
+        border-radius: 10px;
+        color: white;
+        text-decoration: none;
+        padding: 12px 36px;
+        display: inline-flex;
+        gap: 1rem;
+        align-items: center;
+        font-size: 1.4rem;
+    }
+    a img {
+        width: 24px;
+        height: 24px;
+    }
+    @media (max-width: 768px) {
+        h1 {
+            font-size: 2.5rem;
+        }
+        .logo {
+            display: block;
+            width: 140px;
+            margin-left: -20px;
+            margin-bottom: 20px;
+        }
+    }
+</style>

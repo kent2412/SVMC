@@ -1,0 +1,56 @@
+<section class="navbar">
+    <div class="logo">
+        <img src="src/images/logo-white.png" alt="">
+    </div>
+    <div class="enlaces">
+        <a href="#">Bienvenidos</a>
+        <a href="#">Programa</a>
+        <a href="#">Iniciar sesión</a>
+        <a href="#" class="buttonJoin">Únete ahora</a>
+    </div>
+</section>
+
+<style>
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        gap: 2rem;
+        width: 100%;
+        max-width: 1080px;
+        background-color: #ffffff14;
+        border-radius: 22px;
+        padding: 32px;
+        position: absolute;
+        top: 24px;
+        left: 50%;
+        transform: translateX(-50%);
+        -webkit-box-shadow: 0px 0px 25px 10px rgba(0,0,0,0.2);
+        -moz-box-shadow: 0px 0px 25px 10px rgba(0,0,0,0.2);
+        box-shadow: 0px 0px 25px 10px rgba(0,0,0,0.2);
+    }
+    .logo {
+        display: flex;
+        align-items: center;
+    }
+    .enlaces {
+        display: flex;
+        align-items: center;
+        gap: 3rem;
+    }
+    a {
+        color: #ffffff;
+        text-decoration: none;
+    }
+    .buttonJoin {
+        background-color: #EEC432;
+        border-radius: 10px;
+        color: white;
+        text-decoration: none;
+        padding: 12px 36px;
+    }
+    @media (max-width: 768px) {
+        .navbar {
+            display: none;
+        }
+    }
+</style>

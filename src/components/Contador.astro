@@ -1,0 +1,158 @@
+
+<div class="contador">
+    <div class="datos">
+        <div class="fecha">
+            <img src="src/images/calendar-sharp.png" alt="">
+            <p>Viernes, 26 de abril</p>
+        </div>
+        <div class="hora">
+            <img src="src/images/alarm.png" alt="">
+            <p>8:00 am. a 6:00 pm.</p>
+        </div>
+        <div class="lugar">
+            <img src="src/images/location-sharp.png" alt="">
+            <p>Hotel Guaparo Inn Valencia</p>
+        </div>
+    </div>
+    <div class="reloj">
+        <div>
+            <p id="dias"></p>
+            <p>Días</p>
+        </div>
+        <div>
+            <p id="horas"></p>
+            <p>Horas</p>
+        </div>
+        <div>
+            <p id="minutos"></p>
+            <p>Minutos</p>
+        </div>
+        <div>
+            <p id="segundos"></p>
+            <p>Segundos</p>
+        </div>
+    </div>
+</div>
+
+<script>
+    const fechaObjetivo = new Date("2024-04-26T08:00:00");
+    
+    function actualizarContador() {
+      const ahora = new Date();
+      const diferencia = fechaObjetivo.getTime() - ahora.getTime();
+      
+      const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
+      const horas = Math.floor((diferencia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutos = Math.floor((diferencia % (1000 * 60 * 60)) / (1000 * 60));
+      const segundos = Math.floor((diferencia % (1000 * 60)) / 1000);
+      
+      const contenedorDias = document.getElementById("dias");
+      const contenedorHoras = document.getElementById("horas");
+      const contenedorMinutos = document.getElementById("minutos");
+      const contenedorSegundos = document.getElementById("segundos");
+
+      contenedorDias.innerHTML = `
+        ${dias}
+      `;
+      contenedorHoras.innerHTML = `
+        ${horas}
+      `;
+      contenedorMinutos.innerHTML = `
+        ${minutos}
+      `;
+      contenedorSegundos.innerHTML = `
+        ${segundos}
+      `;
+    }
+    
+    actualizarContador();
+    
+    setInterval(actualizarContador, 1000);
+</script>
+
+<style>
+    .contador {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        max-width: 1080px;
+        margin: auto;
+        border-radius: 22px;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        margin-top: -56px;
+        -webkit-box-shadow: 0px 0px 25px 10px rgba(0,0,0,0.2);
+        -moz-box-shadow: 0px 0px 25px 10px rgba(0,0,0,0.2);
+        box-shadow: 0px 0px 25px 10px rgba(0,0,0,0.2);
+    }
+    .reloj {
+        background-color: #EEC432;
+        border-radius: 0 0 22px 22px;
+        padding: 12px 0;
+    }
+    .reloj, .datos {
+        display: flex;
+        justify-content: space-evenly;
+    }
+    .reloj div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        width: 100%;
+    }
+    .reloj p, .datos p {
+        margin: 0;
+    }
+    .datos {
+        background-color: #28374A;
+        border-radius: 22px 22px 0 0;
+        padding: 12px 0;
+    }
+    .datos div {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        width: 100%;
+    }
+    .datos img {
+        width: 24px;
+        height: 24px;
+    }
+    #dias, #horas, #minutos, #segundos {
+        font-size: 60px;
+        font-weight: 800;
+        line-height: 1.12;
+    }
+    .reloj div:not(:last-child)::after, .datos div:not(:last-child)::after {
+        content: "";
+        display: block;
+        width: 1px;
+        height: 80%;
+        background-color: #ffffffad;
+        position: absolute;
+        right: 0;
+    }
+    @media (max-width: 768px) {
+        #dias, #horas, #minutos, #segundos {
+            font-size: 1.8rem;
+        }
+        .reloj p {
+            font-size: 1rem;
+        }
+        .datos {
+            flex-direction: column;
+        }
+        .reloj div:not(:last-child)::after, .datos div:not(:last-child)::after {
+            display: none;
+        }
+        .contador {
+            width: 94%;
+            margin-top: -120px;
+        }
+    }
+</style>

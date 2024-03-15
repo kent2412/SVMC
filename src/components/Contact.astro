@@ -1,0 +1,62 @@
+<div class="container">
+    <div class="container-in">
+        <div class="copy">
+            <h1>Contacto</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed erat nibh tristique ipsum.</p>
+        </div>
+        <div class="data">
+            <div class="data-item">
+                <img src="src/images/location-sharp.png" alt="">
+                <p>838 Cantt Sialkot, pakistan</p>
+            </div>
+            <div class="data-item">
+                <img src="src/images/phone.png" alt="">
+                <p>979-988-89787</p>
+            </div>
+            <div class="data-item">
+                <img src="src/images/mail.png" alt="">
+                <p>abcd123@gmail.com</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .container {
+        background-color: #1D2C41;
+		padding: 5rem 2rem;
+    }
+    .container-in {
+        display: flex;
+		flex-wrap: wrap;
+		gap: 3rem;
+		max-width: 1366px;
+		padding: 1rem;
+		margin: auto;
+        justify-content: space-around;
+    }
+    .data {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        justify-content: center;
+    }
+    .data-item {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+    .data-item p {
+        margin: 0;
+    }
+    img {
+        width: 24px;
+        height: auto;
+    }
+    .copy h1 {
+        margin-top: 0;
+    }
+    .copy p {
+        max-width: 400px;
+    }
+</style>

@@ -1,0 +1,187 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ATF from '../components/AboveTheFold.astro';
+import Contador from '../components/Contador.astro';
+import Navbar from '../components/Navbar.astro';
+import Content from '../components/Content.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+import EventCard from '../components/EventCard.astro';
+import Contact from '../components/Contact.astro'
+---
+
+<Layout title="SVMC">
+	<main>
+		<!-- Barra de navegación -->
+		<Navbar />
+
+		<!-- Above the fold -->
+		<ATF
+			title= "Simposio Nacional de Cardiología Critica 2024"
+			description="Programa científico de elevado nivel académico con expertos de la medicina donde se discutirá tópicos como: paciente adulto, pediátrico y neonatal críticamente enfermo."
+			buttonText="Únete ahora"
+			href="#"
+		/>
+
+		<!-- Contador -->
+		<Contador />
+
+		<!-- Nosotros y que ofrecemos -->
+		<Content
+			img1='src/images/left.png'
+			title1='Bienvenidos'
+			description1='En este evento estaremos discutiendo los principales temas en la esfera cardiovascular del paciente adulto, pediátrico y neonatal críticamente enfermo, bajo un formato de actualización práctica dictados por conferencistas tanto nacionales como internacionales de amplia trayectoria profesional. '
+			img2='src/images/right.png'
+			title2='Te esperamos'
+			description2='Este Simposio lo realizaremos en las instalaciones del hotel Guaparo Inn en la ciudad de Valencia, Estado Carabobo el día viernes 26 de abril de 2024. Las conferencias se llevarán a cabo de manera simultánea en los  salones Guayacan y Bucare e igualmente contaremos  con un área comercial donde tendremos expositores de las principales casas farmacéuticas y de equipos médicos del país.'
+			hrefPDF='#'
+			textButton='Descargue el programa'
+		/>
+
+		<!-- Servicios -->
+		<section class="services-container">
+			<h1 class="services-title">
+				Nuestros Servicios
+			</h1>
+			<p class="services-description">
+				Lorem ipsum is common placeholder text used to demonstrate the graphic elements of a document or visual presentation.
+			</p>
+			<div class="services-card-container">
+				<ServiceCard
+					icon="src/images/service-icon1.png"
+					title='Servicio'
+					description='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed erat nibh tristique ipsum.'
+				/>
+				<ServiceCard
+					icon="src/images/service-icon2.png"
+					title='Servicio'
+					description='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed erat nibh tristique ipsum.'
+				/>
+				<ServiceCard
+					icon="src/images/service-icon3.png"
+					title='Servicio'
+					description='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed erat nibh tristique ipsum.'
+				/>
+				<ServiceCard
+					icon="src/images/service-icon1.png"
+					title='Servicio'
+					description='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed erat nibh tristique ipsum.'
+				/>
+				<ServiceCard
+					icon="src/images/service-icon2.png"
+					title='Servicio'
+					description='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed erat nibh tristique ipsum.'
+				/>
+				<ServiceCard
+					icon="src/images/service-icon3.png"
+					title='Servicio'
+					description='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed erat nibh tristique ipsum.'
+				/>
+			</div>
+		</section>
+
+		<!-- Eventos -->
+		<section class="events-container">
+			<div class="title-events">
+				<h1>Eventos</h1>
+				<a href="">
+					Explore eventos
+					<img src="src/images/arrow-rightR.png" alt="">
+				</a>
+			</div>
+			<div class="events-card-container">
+				<EventCard 
+					image='src/images/event1.png'
+					type='Tipo de evento'
+					category='Categoría'
+					title='Título'
+					href='#'
+					buttonText='Ver evento'
+				/>
+				<EventCard 
+					image='src/images/event2.png'
+					type='Tipo de evento'
+					category='Categoría'
+					title='Título'
+					href='#'
+					buttonText='Ver evento'
+				/>
+				<EventCard 
+					image='src/images/event3.png'
+					type='Tipo de evento'
+					category='Categoría'
+					title='Título'
+					href='#'
+					buttonText='Ver evento'
+				/>
+			</div>
+		</section>
+
+		<!-- Contacto -->
+		<Contact />
+	</main>
+</Layout>
+
+<style>
+	main {
+		margin: auto;
+		padding: 0;
+		width: 100%;
+		color: white;
+		font-size: 20px;
+		line-height: 1.6;
+	}
+	.services-title {
+		font-size: 4rem;
+        font-weight: 900;
+		text-align: center;
+		margin: 0;
+	}
+	.services-container {
+		background-color: #141F2B;
+		padding: 5rem 2rem;
+	}
+	.services-description {
+		font-size: 1.2rem;
+		text-align: center;
+		margin: 0 auto 4rem;
+		max-width: 860px;
+	}
+	.services-card-container, .events-card-container {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 3rem;
+		justify-content: center;
+		align-items: center;
+		max-width: 1366px;
+		padding: 1rem;
+		margin: auto;
+	}
+	.events-container {
+		padding: 5rem 2rem;
+		max-width: 1366px;
+		margin: auto auto 3rem;
+		color: #0F172A;
+	}
+	.title-events, .title-events a {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+	.title-events h1 {
+		font-size: 4rem;
+		margin: 0;
+	}
+	.title-events a {
+		text-decoration: none;
+		color: #BF323A;
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+	}
+	@media (max-width: 768px) {
+		.services-title, .title-events h1 {
+			font-size: 2.1rem;
+			font-weight: 900;
+		}
+	}
+</style>

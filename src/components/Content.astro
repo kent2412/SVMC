@@ -1,0 +1,103 @@
+---
+interface Props {
+    img1: string;
+    title1: string;
+    description1: string;
+    img2: string;
+    title2: string;
+    description2: string;
+    hrefPDF: string;
+    textButton: string;
+}
+
+const { img1, title1, description1, img2, title2, description2, hrefPDF, textButton } = Astro.props;
+---
+
+<section class="bg">
+    <div class="container">
+        <div class="image">
+            <img src={img1} alt="">
+        </div>
+        <div class="description">
+            <h1>{title1}</h1>
+            <p>{description1}</p>
+        </div>
+        <div class="description">
+            <h1>{title2}</h1>
+            <p>{description2}</p>
+            <a href={hrefPDF} target="_blank">
+                {textButton}
+                <img src="src/images/arrow-rightY.png" alt="">
+            </a>
+        </div>
+        <div class="image">
+            <img src={img2} alt="">
+        </div>
+    </div>
+</section>
+
+<style>
+    .bg {
+        background-image: url(../images/Group62.png);
+        background-size: cover;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .container {
+        width: 100%;
+        max-width: 1366px;
+        padding: 18rem 2rem 12rem;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+        align-items: center;
+    }
+    .image {
+        margin: auto;
+    }
+    h1 {
+        font-size: 4rem;
+        font-weight: 900;
+    }
+    p {
+        font-size: 1.2rem;
+    }
+    a {
+        font-size: 1.2rem;
+        color: #EEC432;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 1rem;
+    }
+    a img {
+        width: 24px;
+        height: 24px;
+    }
+    @media (max-width: 768px) {
+        .container {
+            grid-template-columns: 1fr;
+            padding: 10rem 1rem 10rem;
+        }
+        .image img {
+            max-width: 380px;
+            height: auto;
+        }
+        h1 {
+            font-size: 2.1rem;
+        }
+        .container div:nth-child(1) {
+            order: 2;
+        }
+        .container div:nth-child(2) {
+            order: 1;
+        }
+        .container div:nth-child(3) {
+            order: 3;
+        }
+        .container div:nth-child(4) {
+            order: 4;
+        }
+    }
+</style>
