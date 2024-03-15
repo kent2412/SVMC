@@ -12,12 +12,12 @@ const { title, description, buttonText, href } = Astro.props;
 <header>
     <div class="bg">
         <div class="contentATF">
-            <img src="public\logo-white.png" class="logo" alt="">
+            <img src="\logo-white.png" class="logo" alt="">
             <h1>{title}</h1>
             <p>{description}</p>
             <a href={href}>
                 {buttonText}
-                <img src="src/images/arrow-right.png" alt="">
+                <img src="\arrow-right.png" alt="">
             </a>
         </div>
     </div>
@@ -28,7 +28,7 @@ const { title, description, buttonText, href } = Astro.props;
         display: flex;
         align-items: center;
         justify-content: center;
-        background-image: url("../images/Group61.png");
+        background-image: url("\Group61.png");
         background-size: cover;
         background-position: center;
         height: 80dvh;
