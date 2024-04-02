@@ -1,12 +1,11 @@
 ---
 interface Props {
 	title: string;
-	description: string;
     buttonText: string;
 	href: string;
 }
 
-const { title, description, buttonText, href } = Astro.props;
+const { title, buttonText, href } = Astro.props;
 ---
 
 <header>
@@ -14,7 +13,6 @@ const { title, description, buttonText, href } = Astro.props;
         <div class="contentATF">
             <img src="\logo-white.png" class="logo" alt="">
             <h1>{title}</h1>
-            <p>{description}</p>
             <a href={href}>
                 {buttonText}
                 <img src="\arrow-right.png" alt="">
